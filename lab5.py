@@ -24,7 +24,7 @@ else:
         elif 0<x<1:
             z=sin(x)
         else:
-            z=cos(x*3)
+            z=cos(x)
         print("Ответ = ",z)
         x=x+dx
 print("Задание 3")
@@ -39,6 +39,7 @@ else:
         a=a+b
         b=b+2
     print("Квадрат числа =",a)
+
 
 
 

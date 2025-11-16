@@ -1,18 +1,32 @@
 print("Задание 1")
 print("Самое длинное слово в тексте")
 a=input("Введите текст:")
-b=a.split()
+w=""
 long=""
-for w in b:
-    if len(w) > len(long):
-        long=w
-print("Самое длинное слово", long)
+for c in a:
+    if c!=" ":
+        w+=c
+    else:
+        if len(w) > len(long):
+            long=w
+        w=""
+if len(w) > len(long):
+    long=w
+print("Самое длинное слово:", long)
 
 print("Задание 2")
 print("Количество слов в строке")
-s=input("Введите строку:")
-b=s.split()
-print("Количество слов :",len(b))
+a=input("Введите строку:")
+
+w=0
+flag=1
+for c in a:
+    if c!=" " and flag == 1:
+        w+=1
+        flag=0
+    if c==" ":
+        flag=1
+print("Количество слов :",w)
 
 print("Задание 3")
 print("Работа со списком чисел")

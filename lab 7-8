@@ -1,0 +1,87 @@
+import random
+def matrix1(m, n):
+    matrix = []
+    for i in range(m):
+        row = []
+        for j in range(n):
+            row.append(random.randint(1, 9))
+        matrix.append(row)
+    return matrix
+
+def unique(matrix):
+    flat = []
+    for row in matrix:
+        for x in row:
+            flat.append(x)
+    u = []
+    for x in flat:
+        count = 0
+        for y in flat:
+            if x == y:
+                count += 1
+        if count == 1:
+            u.append(x)
+    return u
+print("ЗАДАНИЕ 1")
+try:
+    m = int(input("Введите количество строк M: "))
+    n = int(input("Введите количество столбцов N: "))
+except ValueError:
+    print("Ошибка")
+else:
+    matrix = matrix1(m, n)
+    print("Сгенерированная матрица:")
+    for row in matrix:
+        print(row)
+
+    u = unique(matrix)
+    print("Неповторяющиеся элементы:", u)
+print("ЗАДАНИЕ 2")
+def PowerA234(A):
+    B = A * A
+    C = B * A
+    D = C * A
+    return B, C, D
+n = []
+print("Введите 5 вещественных чисел:")
+for i in range(5):
+    while True:
+        x = input("Введите число:")
+        try:
+            n.append(float(x))
+            break
+        except ValueError:
+            print("Ошибка: нужно ввести число!")
+for v in n:
+    b, c, d = PowerA234(v)
+    print(f"A = {v}:  A^2 = {b}, A^3 = {c}, A^4 = {d}")
+
+print("ЗАДАНИЕ 3")
+def age():
+    try:
+        x = int(input("Возраст:"))
+    except ValueError:
+        print("Ошибка")
+        pass
+    else:
+        if x>0:
+            return x
+
+def Person():
+    person = {}
+    person["имя"] = input("Имя: ")
+    person["пол"] = input("Пол: ")
+    person["индивидуальный номер"] = input("ID: ")
+    person["возраст"] =age()
+    return person
+
+def birth(person):
+    b = 2025
+    return b - person["возраст"]
+a = Person()
+
+print("Словарь человека:")
+print(a)
+year = birth(a)
+print("Год рождения:", year)
+

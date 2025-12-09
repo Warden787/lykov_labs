@@ -4,7 +4,7 @@ def matrix1(m, n):
     for i in range(m):
         row = []
         for j in range(n):
-            row.append(random.randint(1, 9))
+            row.append(random.randint(1, 10))
         matrix.append(row)
     return matrix
 
@@ -20,8 +20,8 @@ def unique(matrix):
             if x == y:
                 count += 1
         if count == 1:
-            u.append(x)
-    return u
+            un.append(x)
+    return un
 print("ЗАДАНИЕ 1")
 try:
     m = int(input("Введите количество строк M: "))
@@ -34,8 +34,8 @@ else:
     for row in matrix:
         print(row)
 
-    u = unique(matrix)
-    print("Неповторяющиеся элементы:", u)
+    un = unique(matrix)
+    print("Неповторяющиеся элементы:", un)
 print("ЗАДАНИЕ 2")
 def PowerA234(A):
     B = A * A
